@@ -1,10 +1,5 @@
 function getAPIKey() {
-    const captchaResponse = grecaptcha.getResponse();
-
-    if (captchaResponse.length === 0) {
-        alert("Please complete the CAPTCHA.");
-        return;
-    }
+    
 
     fetch('/api/generate_key', {
         method: 'POST',
