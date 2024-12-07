@@ -4,10 +4,7 @@ module.exports = async (req, res) => {
     if (req.method === 'POST') {
         const { captcha } = req.body;
 
-        // Verify CAPTCHA
-        const secretKey = 'your-secret-key'; // Google reCAPTCHA secret key
-        const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`;
-
+       
         try {
             const response = await fetch(verificationUrl, { method: 'POST' });
             const data = await response.json();
